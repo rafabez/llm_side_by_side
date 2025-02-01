@@ -1,0 +1,137 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #ECECEC;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 1em 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid #56567C;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 0.2em;
+}
+
+header h2 {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #ECECEC;
+}
+
+/* Main container with two columns */
+#main-container {
+  flex: 1;
+  display: flex;
+  padding: 1em;
+  gap: 1em;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Each model column */
+.model-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #56567C;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* Dropdown style */
+.model-column select {
+  width: 100%;
+  padding: 0.5em;
+  background-color: #343541;
+  color: #ECECEC;
+  border: none;
+  font-size: 1em;
+}
+
+/* Output message box */
+.output-box {
+  flex: 1;
+  padding: 1em;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: rgba(50, 50, 50, 0.2);
+}
+
+.model-description {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  text-decoration: underline;
+}
+
+/* Fixed input area */
+#input-area {
+  width: 100%;
+  display: flex;
+  gap: 0.5em;
+  padding: 0.8em;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-top: 1px solid #56567C;
+}
+
+#userInput {
+  flex: 1;
+  resize: none;
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+  background-color: #343541;
+  color: #ECECEC;
+  padding: 0.8em;
+  font-size: 1.2em;
+}
+
+#userInput::placeholder {
+  color: #8E8E8E;
+}
+
+#sendBtn {
+  background-color: #56567C;
+  color: #ECECEC;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0.8em 1em;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+#sendBtn:hover {
+  background-color: #6E6E9E;
+}
+
+footer {
+  text-align: center;
+  padding: 0.5em;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-top: 1px solid #56567C;
+  font-size: 0.9em;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  #main-container {
+    flex-direction: column;
+  }
+}
