@@ -56,18 +56,23 @@ Check out the live demo here:
 
 Below is an overview of the application's flow:
 
-```mermaid
-graph TD;
-    A[User Enters Prompt on Web Page] -->|Triggers| B(sendMessage() in script.js);
-    B -->|Calls| C(callPollinations() Function);
-    C -->|Sends request to| D(PHP Proxy - proxy.php);
-    D -->|Forwards request to| E(Pollinations API);
-    E -->|Returns response to| D;
-    D -->|Returns response to| C;
-    C -->|Updates| F(Display Response in Output Boxes);
 ```
-
-*Note: To view the diagram, ensure your Markdown viewer supports Mermaid diagrams.*
+User Enters Prompt on Web Page
+    ↓
+sendMessage() in script.js
+    ↓
+callPollinations() Function
+    ↓
+PHP Proxy (proxy.php)
+    ↓
+Pollinations API
+    ↓
+PHP Proxy (proxy.php) Returns Response
+    ↓
+callPollinations() Parses Response
+    ↓
+Display Response in Output Boxes
+```
 
 ---
 
@@ -117,7 +122,7 @@ https://interzone.art.br/llm_side_by_side/small_logo.png
   Check the browser console and server logs for errors if responses from the Pollinations API are not received.
 
 - **Diagram Not Displaying:**  
-  If the Mermaid diagram does not render, try viewing the README in a Markdown viewer that supports Mermaid syntax (e.g., VS Code with the appropriate extension).
+  If the architecture diagram is not displaying correctly in some Markdown viewers, try viewing the README in a standard text editor or ensure your Markdown renderer supports ASCII diagrams.
 
 ---
 
