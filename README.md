@@ -58,13 +58,13 @@ Below is an overview of the application's flow:
 
 ```mermaid
 graph TD;
-    A[User Enters Prompt on Web Page] --> B[sendMessage() in script.js];
-    B --> C[callPollinations() Function];
-    C --> D[PHP Proxy (proxy.php)];
-    D --> E[Pollinations API];
-    E --> D;
-    D --> C;
-    C --> F[Display Response in Output Boxes];
+    A[User Enters Prompt on Web Page] -->|Triggers| B(sendMessage() in script.js);
+    B -->|Calls| C(callPollinations() Function);
+    C -->|Sends request to| D(PHP Proxy - proxy.php);
+    D -->|Forwards request to| E(Pollinations API);
+    E -->|Returns response to| D;
+    D -->|Returns response to| C;
+    C -->|Updates| F(Display Response in Output Boxes);
 ```
 
 *Note: To view the diagram, ensure your Markdown viewer supports Mermaid diagrams.*
